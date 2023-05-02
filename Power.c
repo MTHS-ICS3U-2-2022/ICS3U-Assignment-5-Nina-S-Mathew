@@ -6,34 +6,34 @@
 
 #include <stdio.h>
 
-int main()
-{
-
+int main() {
     // this function uses a while loop
 
     int base_Number;
     int power_Number;
-    long long answer = 1;
+    int answer = 1;
     int ScanError = 0;
+    int positive_integer;
 
     // input
 
-    printf("Enter a positive number: ");
-    ScanError = scanf("%d", &power_Number);
+    printf("Enter a base number: ");
+    ScanError = scanf("%d", &base_Number);
 
     printf("Enter a positive number: ");
-    ScanError = scanf("%d", &base_Number);
+    ScanError = scanf("%d", &power_Number);
 
     // process
 
     if (ScanError == 1) {
         if (power_Number >= 0) {
-            for (int base_number = 1; base_number <=
-                power_Number; base_number++) {
+            for (int positive_integer = 1; positive_integer <=
+                power_Number; positive_integer++) {
                 answer = answer * base_Number;
-                printf("%d to the power of %d = %lld\n", base_number, power_Number, answer);
-                break ;
-            }
+                }
+                printf("%d to the power of %d is %d\n",
+                base_Number, power_Number, answer);
+
         } else {
             printf("Invalid input\n");
         }
