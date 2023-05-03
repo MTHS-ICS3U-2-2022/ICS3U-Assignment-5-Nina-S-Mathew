@@ -8,7 +8,6 @@ This is the " value of one number raised to the power of another. " module
 
 def main() -> None:
     """The main() this function uses a while loop, returns None."""
-    answer = 1
 
     # input
     base_number_str = input("Enter the number of which you have to find power: ")
@@ -24,10 +23,10 @@ def main() -> None:
     if power_number < 0:
         print("Invalid, Input. Please try again.")
     else:
-        for base_number in range (power_number + 1):
-            answer = base_number * answer
+        answer = 1
+        for _ in range (power_number):
+            answer *= base_number
             print(f"The power of {base_number} by {power_number} is {answer}.")
-            break
     print("\nDone.")
 
 
