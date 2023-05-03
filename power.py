@@ -24,9 +24,10 @@ def main() -> None:
         print("Invalid, Input. Please try again.")
     else:
         answer = 1
-        for _ in range (power_number):
-            answer *= base_number
+        for power_number_str in range(power_number):
+            answer = base_number**power_number
             print(f"The power of {base_number} by {power_number} is {answer}.")
+            break
     print("\nDone.")
 
 
