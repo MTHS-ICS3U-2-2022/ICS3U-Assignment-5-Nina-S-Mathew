@@ -8,26 +8,30 @@ This is the " value of one number raised to the power of another. " module
 
 def main() -> None:
     """The main() this function uses a while loop, returns None."""
+    # Write a program to find the value of one number raised to the power of another.
+    # Do not use any built-in method, you must use a loop.
+    # Ask the user for the number to be raised to the power.
+    # With try and except statements, you can handle exceptions.
 
-    # input
-    base_number_str = input("Enter the number of which you have to find power: ")
-    power_number_str = input("Enter the power: ")
+    # Input
+    print("This program finds the value of one number raised to the power of another.")
     print("")
-
-    # process & output
+    base_str = input("Enter the base number: ")
+    exponent_str = input("Enter the exponent number: ")
+    print("")
+    # Process & Output
+    # With try and except statements, that catch strings that cannot be converted to integer.
     try:
-        base_number = int(base_number_str)
-        power_number = int(power_number_str)
-    except ValueError:
-        print("Invalid, Input. Please try again.")
-    if power_number < 0:
-        print("Invalid, Input. Please try again.")
-    else:
+        base_int = int(base_str)
+        exponent_int = int(exponent_str)
         answer = 1
-        for power_number_str in range(power_number):
-            answer = base_number**power_number
-            print(f"The power of {base_number} by {power_number} is {answer}.")
-            break
+        while exponent_int >= 0:
+            answer = answer * base_int
+            exponent_int = exponent_int - 1
+        print(f"The answer is: {answer}")
+    except ValueError:
+        print("Invalid input, try again.")
+
     print("\nDone.")
 
 

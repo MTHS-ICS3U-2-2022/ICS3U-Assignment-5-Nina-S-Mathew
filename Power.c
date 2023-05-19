@@ -4,42 +4,35 @@
 // Created on: April 14, 2023
 // This program does a for loop
 
+
+
 #include <stdio.h>
+#include <math.h>
 
 int main() {
-    // this function uses a while loop
-
-    int base_Number;
-    int power_Number;
+    int number;
+    int power;
     int answer = 1;
+    int loopCounter = 0;
     int ScanError = 0;
-    int positive_integer;
 
     // input
-
     printf("Enter a base number: ");
-    ScanError = scanf("%d", &base_Number);
+    ScanError = scanf("%d", &number);
+    printf("Enter a power: ");
+    ScanError = scanf("%d", &power);
 
-    printf("Enter a positive number: ");
-    ScanError = scanf("%d", &power_Number);
-
-    // process
-
-    if (ScanError == 1) {
-        if (power_Number >= 0) {
-            for (int positive_integer = 1; positive_integer <=
-                power_Number; positive_integer++) {
-                answer = answer * base_Number;
-                }
-                printf("%d to the power of %d is %d\n",
-                base_Number, power_Number, answer);
-
-        } else {
-            printf("Invalid input\n");
-        }
+    // process and output
+    if (ScanError == 0) {
+        printf("Invalid Input");
     } else {
-        printf("Invalid input\n");
+        for (loopCounter = 0; loopCounter < power; loopCounter++) {
+            answer = answer * number;
+        }
+        printf("%d to the power of %d is %d", number, power, answer);
     }
     printf("\nDone.\n");
     return 0;
 }
+
+
